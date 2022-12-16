@@ -37,13 +37,13 @@ function playRound(playerSelection, computerSelection) {
 function game() {
 	let userPoints = 0,
 		computerPoints = 0;
-	for (let i = 0; i < 5; i++) {
-		let userChoice = prompt("choose one");
-		let resultOfPlayRound = playRound(userChoice, getComputerChoice());
-		if (resultOfPlayRound == "player beats computer") userPoints++;
-		if (resultOfPlayRound == "computer beats player") computerPoints++;
-		console.log(resultOfPlayRound);
-	}
+
+	let userChoice = prompt("choose one");
+	let resultOfPlayRound = playRound(userChoice, getComputerChoice());
+	if (resultOfPlayRound == "player beats computer") userPoints++;
+	if (resultOfPlayRound == "computer beats player") computerPoints++;
+	console.log(resultOfPlayRound);
+
 	if (computerPoints > userPoints) console.log("Computer won");
 	else console.log("User won");
 }
