@@ -20,16 +20,21 @@ function playRound(playerSelection, computerSelection) {
 		(playerSelection == "paper" && computerSelection == "rock")
 	)
 		// return "player beats computer";
-		console.log("player beats computer");
+		// console.log("player beats computer");
+		resultDiv.append("player beats computer\n", document.createElement('br'));
 	if (
 		(computerSelection == "rock" && playerSelection == "scissor") ||
 		(computerSelection == "paper" && playerSelection == "rock")
 	)
 		// return "computer beats player";
-		console.log("computer beats player");
+		// console.log("computer beats player");
+		resultDiv.append("computer beats player\n", document.createElement('br'));
+
 	else 
 		// return "tie no one won";
-		console.log("tie no one won");
+		// console.log("tie no one won");
+		resultDiv.append("tie no one won\n", document.createElement('br'));
+
 }
 
 // Write a NEW function called game().
@@ -64,3 +69,6 @@ selectionBtns.forEach(button => {
 	})
 	
 })
+
+// div for displaying results
+const resultDiv = document.querySelector('.resultDiv');
