@@ -58,14 +58,9 @@ const paperButton = document.getElementById("paper");
 const scissorsButton = document.getElementById("scissors");
 
 const selectionBtns = [...document.querySelectorAll(".selection-buttons button")];
-/* selectionBtns.forEach(button => {
-	button.addEventListener('click', playRound(button.id, getComputerChoice()), {once: true})
-	console.log(this);
-}) */
 selectionBtns.forEach(button => {
 	button.addEventListener('click', (e) => {
 		playRound(e.target.id, getComputerChoice())
-		// console.log(e.target.id);
 	})
 	
 })
