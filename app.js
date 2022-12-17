@@ -1,5 +1,3 @@
-console.log("hello from external js file");
-
 // Your game is going to play against the computer, so begin with a function called getComputerChoice
 // that will randomly return either ‘Rock’, ‘Paper’ or ‘Scissors’.
 
@@ -21,13 +19,17 @@ function playRound(playerSelection, computerSelection) {
 		(playerSelection == "rock" && computerSelection == "scissor") ||
 		(playerSelection == "paper" && computerSelection == "rock")
 	)
-		return "player beats computer";
+		// return "player beats computer";
+		console.log("player beats computer");
 	if (
 		(computerSelection == "rock" && playerSelection == "scissor") ||
 		(computerSelection == "paper" && playerSelection == "rock")
 	)
-		return "computer beats player";
-	else return "tie no one won";
+		// return "computer beats player";
+		console.log("computer beats player");
+	else 
+		// return "tie no one won";
+		console.log("tie no one won");
 }
 
 // Write a NEW function called game().
@@ -48,4 +50,22 @@ function game() {
 	else console.log("User won");
 }
 
-console.log(game());
+// console.log(game());
+
+// selection buttons
+const rockButton = document.getElementById("rock");
+const paperButton = document.getElementById("paper");
+const scissorsButton = document.getElementById("scissors");
+
+const selectionBtns = [...document.querySelectorAll(".selection-buttons button")];
+/* selectionBtns.forEach(button => {
+	button.addEventListener('click', playRound(button.id, getComputerChoice()), {once: true})
+	console.log(this);
+}) */
+selectionBtns.forEach(button => {
+	button.addEventListener('click', (e) => {
+		playRound(e.target.id, getComputerChoice())
+		// console.log(e.target.id);
+	})
+	
+})
